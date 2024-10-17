@@ -1,5 +1,5 @@
 video:
   file: "output/sample.mp4"
   scenes:
-    - { path: "sample/video1.mp4" }
-    - { path: "sample/video2.mp4" }
+    - { path: "sample/video1.mp4", filter: { type: "filter_complex", category: "smoothup", duration: 4, offset: 5 } }
+    - { path: "sample/video2.mp4", filter: { type: "", category: "", duration: 0, offset: 0 } }
