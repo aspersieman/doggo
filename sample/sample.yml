@@ -1,0 +1,5 @@
+video:
+  file: "output/sample.mp4"
+  scenes:
+    - { path: "sample/video1.mp4" }
+    - { path: "sample/video2.mp4" }
