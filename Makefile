@@ -1,6 +1,15 @@
+BIN=doggo
+ifeq ($(OS),Windows_NT)
+	BIN=doggo.exe
+endif
+
 help:
+ifeq ($(OS),Windows_NT)
+	@echo "Windows help not supported"
+else
 	@echo "Usage:"
 	@sed -n 's/^##//p' ${MAKEFILE_LIST} | column -t -s ":" | sed -e 's/^/  /'
+endif
 
 ## lint: Run the linter
 lint:
@@ -21,7 +30,7 @@ tests-report:
 
 ## build: Builds the binary
 build:
-	go build -o bin/doggo main.go
+	go build -o bin/${BIN} main.go
 
 ## docker-modules: Cleans go.mod file and installs the required go build dependencies
 docker-modules:
